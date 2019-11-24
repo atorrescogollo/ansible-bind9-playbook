@@ -1,0 +1,11 @@
+#
+# Master Playbook: Bind9 Installation
+#
+
+- name: Install bind9
+  hosts: nameservers
+  become: yes
+  roles:
+    - apt-upgrade
+    - bind9-install
+    - bind9-genconf

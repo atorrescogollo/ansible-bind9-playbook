@@ -1,0 +1,15 @@
+#
+# Rol variables for Bind9 Server Configuration through j2 templates
+#
+
+cache_dir: /var/cache/bind
+forwarders:
+  - 1.1.1.1
+  - 8.8.8.8
+  - 8.8.4.4
+dnsecvalidation: auto
+listenon_ipv4:
+  - any
+listenon_ipv6:
+  - none
+zones: []

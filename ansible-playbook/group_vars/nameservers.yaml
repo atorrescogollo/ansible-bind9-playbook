@@ -1,0 +1,11 @@
+#
+# Zone definitions and zone files
+#
+
+zones:
+  - domain: example.com
+    type: master
+    zone_localfile: ../zones/example.com.zone
+  - domain: 1.168.192.in-addr.arpa
+    type: master
+    zone_localfile: ../zones/1.168.192.in-addr.arpa.zone

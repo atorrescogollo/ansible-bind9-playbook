@@ -1,0 +1,15 @@
+$TTL    604800
+@       IN      SOA     ns.example.com. root.example.com. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      ns.example.com.
+1       IN      PTR     ns.example.com.
+
+;also list other computers
+101       IN      PTR     server1.example.com.
+102       IN      PTR     server2.example.com.
+103       IN      PTR     server3.example.com.

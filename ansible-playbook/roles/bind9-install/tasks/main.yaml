@@ -1,0 +1,9 @@
+#
+# Task: Install Bind9
+#
+
+- name: Install bind9 pkg
+  apt:
+    name: bind9
+    state: present
+

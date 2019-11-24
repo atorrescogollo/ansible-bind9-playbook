@@ -1,0 +1,31 @@
+#
+# Task: Configure Bind9 and import zone files
+#
+
+- name: Creating general configuration from template
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/bind/{{ item }}"
+    backup: yes
+    owner: root
+    group: bind
+    mode: '0644'
+  with_items:
+    - named.conf.options
+    - named.conf.local
+
+
+- name: Upload zone files
+  copy:
+    src: "{{ item.zone_localfile }}"
+    dest: "/etc/bind/{{ item.domain }}.db"
+    backup: yes
+  with_items:
+    - "{{ zones }}"
+
+
+- name: Enable and Start Bind Service
+  systemd:
+    name: bind9
+    enabled: yes
+    state: restarted
